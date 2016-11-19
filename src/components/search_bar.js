@@ -17,7 +17,7 @@ class SearchBar extends Component {
   // must have a render method
   render() {
     return (
-      <div>
+      <div className="search-bar">
         <input
           // this sets the value whenever the search bar rerenders
           value = {this.state.term}
