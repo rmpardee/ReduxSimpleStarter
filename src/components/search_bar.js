@@ -14,6 +14,10 @@ class SearchBar extends Component {
     this.state = { term: '' };
   }
 
+  onInputChange(term) {
+    this.setState({term});
+    this.props.onSearchTermChange(term);
+  }
   // must have a render method
   render() {
     return (
@@ -23,16 +27,11 @@ class SearchBar extends Component {
           value = {this.state.term}
           // an event triggers this resetting of state and therefore rerendering
           // This makes it a control field - state controls the value
-          onChange={event => this.setState({ term: event.target.value })} />
+          onChange={event => this.onInputChange(event.target.value)} />
       </div>
     );
-    //equivalent to:
-    // return <input onChange={this.onInputChange} />;
   }
 
-  // onInputChange(event) {
-  //   this.setState({ term: event.target.value });
-  // }
 }
 
 export default SearchBar;
