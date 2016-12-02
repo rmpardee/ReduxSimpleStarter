@@ -8,6 +8,9 @@ export function fetchWeather(city) {
   const url = `${ROOT_URL}&q=${city},us`;
   const request = axios.get(url);
 
+  // the middleware we're using is smart enough to see the payload here is a promise
+  // so it will automatically wait until that request comes back
+  // before passing it on to the reducer
   return {
     type: FETCH_WEATHER,
     payload: request
