@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { fetchWeather } from '../actions/index.js';
 
 export default class SearchBar extends Component {
   constructor(props) {
@@ -11,7 +14,8 @@ export default class SearchBar extends Component {
   onFormSubmit(event) {
     // the browser wants to submit the form and refresh the HTML on submit.
     event.preventDefault();
-    // here we will go and fetch weather data
+    // here we call the action creator
+
   }
 
   onInputChange(event) {
