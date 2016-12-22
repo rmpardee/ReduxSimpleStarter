@@ -38,6 +38,8 @@ function mapStateToProps(state) {
 // Anything returned from this function will end up as props on BookList
 function mapDispatchToProps(dispatch) {
   // Whenever selectBook is called, the result should be passed to all of our reducers
+  // What this first parameter's value is is what will be passed to the reducers. Therefore in this case it's the value of whatever the selectBook function returns, which is the action.
+  // Unclear to me: what is the importance of the naming of the key for this property?
   return bindActionCreators({ selectBook: selectBook}, dispatch);
 }
 
